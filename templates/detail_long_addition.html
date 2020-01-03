@@ -1,0 +1,33 @@
+<p>The given numbers are <b>{{res1}}</b> and <b>{{res2}}</b></p>
+<p>By Adding the two numbers,</p>
+<p style="text-align: center;"><math xmlns="http://www.w3.org/1998/Math/MathML" style="text-align: center;">
+    <mstack>
+  <mn>{{res1}}</mn>
+      <msrow>
+         <mo>+</mo>
+         <mn>{{res2}}</mn>
+      </msrow>
+      <msline/>
+      <mn>{{res}}</mn>
+      <msline/>
+    </mstack>
+  </math><br>
+</p><hr>
+{% for i in f%}
+<p style="text-align: center;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mstack>
+  <mn>{{res1}}</mn>
+      <msrow>
+         <mo>+</mo>
+         <mn>{{res2}}</mn>
+      </msrow>
+      <msline/>
+      <mn>{{i}}</mn>
+      <msline/>
+    </mstack>
+  </math><br>
+</p>
+<p><b>On Adding the first number decimal and second number decimal, we get {{i}}</b></p><hr>
+{% endfor %}
+<h3>Therefore, on calculating the both numbers {{res1}} and {{res2}}, we get the value,</h3>
+<h2>Ans: {{res}}</h2>

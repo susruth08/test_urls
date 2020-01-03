@@ -1,0 +1,56 @@
+<h1>Addition of Numbers using Long Addition Page</h1>
+<form onsubmit="return false">
+  Enter the First Number:  <input type="text" id="myInput1" name="textfield1"></br>
+  Enter the Second Number:  <input type="text" id="myInput2" name="textfield2"></br>
+  <input class="likebutton" type="submit">
+</form>
+<div id="message"></div>
+<script>
+    window.MathJax = {
+        jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
+        extensions: ["mml2jax.js","MathMenu.js","MathZoom.js"],
+        MathML: { extensions: ["mml3.js"]}
+    };
+  
+  (function(d, script) {
+        script = d.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.onload = function(){
+            // remote script has loaded
+        };
+       script.src = 'https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js';
+        d.getElementsByTagName('head')[0].appendChild(script);
+    }(document));
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+$('.likebutton').click(function(){
+    var instr1 = $("#myInput1").val();
+    var instr2 = $("#myInput2").val();
+$.ajax(
+{
+    type:"POST",
+    url:'long_additions/',
+    data:{
+      'instr1' : instr1,
+      'instr2' : instr2,
+        csrfmiddlewaretoken: '{{ csrf_token }}'
+    },
+    success: function( data ) 
+    {
+      document.getElementById("message").innerHTML=data;
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    },
+    error: function(err){
+        $( '#message' ).text("Error");
+    }
+ })
+});
+</script>
