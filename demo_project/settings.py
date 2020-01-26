@@ -74,11 +74,21 @@ WSGI_APPLICATION = 'demo_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+# DATABASE_ROUTERS = ['path.to.DemoRouter']
+# DATABASE_APPS_MAPPING = {'urls': 'urls'}
+
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'NAME': 'urls',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': ''
+    },
 }
 
 

@@ -1,0 +1,58 @@
+
+<h1>lcm of more than two numbers </h1>
+
+<form onsubmit="return false">
+
+    enter numbers  separating by ',':  <input type="text" id="myInput1" name="textfield1" value="{{ numbers }}"></br>
+
+  <input class="likebutton" type="submit">
+</form>
+<div id="message"></div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  var instr1 = $("#myInput1"). val();
+  $.ajax(
+  {
+      type:"POST",
+      url:'/lcm_more/lcm_more1/',
+      data:{
+        'instr1' : instr1,
+
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+      },
+      success: function( data )
+      {
+          document.getElementById("message").innerHTML = data;
+      },
+      error: function(err){
+          $( '#message' ).text("Error");
+      }
+   })
+});
+
+$('.likebutton').click(function(){
+  var instr1 = $("#myInput1"). val();
+
+  $.ajax(
+  {
+      type:"POST",
+      url:'{% url "pages:add_nums_to_db" %}',
+      data:{
+        'instr1' : instr1,
+
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+      },
+      success: function( data )
+      {
+          window.location = "/"+data
+      },
+      error: function(err){
+          $( '#message' ).text("Error");
+      }
+   })
+
+
+});
+</script>

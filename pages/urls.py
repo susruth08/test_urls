@@ -7,4 +7,7 @@ path('long_addition/',views.long_addition,name='long_addition'),
 path('long_addition/long_additions/',views.long_additions,name='long_additions'),
 path('lcm_more/',views.lcm_more,name='lcm_more'),
 path('lcm_more/lcm_more1/',views.lcm_more1,name='lcm_more1'),
+path('add_numbers', views.add_numbers, name="add_nums_to_db"),
+path('<slug:slug>/', views.lcm_more_slug),
+
 ]
