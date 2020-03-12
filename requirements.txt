@@ -42,7 +42,7 @@ pexpect==4.0.1
 Pillow==3.1.2
 pipenv==2018.11.26
 plainbox==0.25
-psutil==3.4.2
+psutil==5.6.6
 psycopg2==2.7.6.1
 ptyprocess==0.5
 pyasn1==0.1.9
