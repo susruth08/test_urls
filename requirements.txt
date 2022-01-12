@@ -40,7 +40,7 @@ paramiko==1.16.0
 passlib==1.6.5
 pexpect==4.0.1
 Pillow==3.1.2
-pipenv==2018.11.26
+pipenv==2022.1.8
 plainbox==0.25
 psutil==3.4.2
 psycopg2==2.7.6.1
