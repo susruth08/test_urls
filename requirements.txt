@@ -71,7 +71,7 @@ SQLAlchemy==1.0.11
 sqlparse==0.3.0
 sshtunnel==0.1.4
 system-service==0.3
-Twisted==19.7.0
+Twisted==22.2.0
 txaio==18.8.1
 ubuntu-drivers-common==0.0.0
 ufw==0.35
