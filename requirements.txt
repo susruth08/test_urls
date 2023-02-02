@@ -80,7 +80,7 @@ urllib3==1.13.1
 usb-creator==0.3.0
 virtualenv==16.7.5
 virtualenv-clone==0.5.3
-Werkzeug==0.10.4
+Werkzeug==0.15.5
 WTForms==2.1
 xdiagnose==3.8.4.1
 xkit==0.0.0
